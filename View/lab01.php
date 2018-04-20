@@ -70,11 +70,12 @@
                 "bar" => "foo",
             ];
 
-            $ary = array(1=>'One','Two','Three');
-            $a = '1'; $b = count($ary);
+            $ary = ['One','Two','Three','Four'];
+            $a = '0'; // zmienna iteracyjna
+            $b = count($ary); // licznik kolejnych elementów tablicy
 
             while($a <= $b) {
-              $pr = $ary [$a];
+              $pr = $ary [$a]; // zmienna z kolejnymi elementami tablicy począwwszy od $a='0'
               echo "$pr <br>";
               $a++;
             }
