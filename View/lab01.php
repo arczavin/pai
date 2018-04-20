@@ -70,18 +70,16 @@
                 "bar" => "foo",
             ];
 
-            $ary = array(1=>'One','Two',3=>'Three');
-            $a = '0';
-            $b = count($ary);
+            $ary = array(1=>'One','Two','Three');
+            $a = '1'; $b = count($ary);
 
             while($a <= $b) {
               $pr = $ary [$a];
-              print "$pr <br>";
+              echo "$pr <br>";
               $a++;
             }
 
-            class
-                Student {
+            class Student {
                     var $surname;
                     var $name;
 
@@ -91,14 +89,14 @@
                     }
 
                     function setSurname($surname){
-                        $this->surname=$surname;
+                        $this->surname=$nazwisko;
                     }
 
-                    function getName($imie){
-                        return
+                    function getName($name){
                         $this->name;
+                        return;
                     }
-                }
+              }
         ?>
     </body>
 </html>
