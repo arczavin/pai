@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/Osoba.php';
+require __DIR__.'/lab02_1.php';
 /**
 * @param Osoba $osoba
 */
