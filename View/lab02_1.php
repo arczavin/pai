@@ -1,5 +1,6 @@
 <?php
 
+
       class A {
           // definicja właściwości
           private $name = 'simple name';
@@ -74,24 +75,106 @@
         }
       }
 
+      class Osoba {
+      private $imie;
+      private $wyksztalcenie;
+
+        function __construct($imie, $wyksztalcenie) {
+          $this->imie = $imie;
+          $this->wyksztalcenie = new Wyksztalcenie($wyksztalcenie);
+        }
+        public function setImie($imie) {
+          $this->imie = $imie;
+        }
+        public function getImie() {
+          return $this->imie;
+        }
+        public function setWyksztalcenie($wyksztalcenie) {
+          $this->wyksztalcenie->setNazwa($wyksztalcenie);
+        }
+        public function getWyksztalcenie() {
+          return $this->wyksztalcenie->getNazwa();
+        }
+          function __clone() {
+            $this->wyksztalcenie = clone $this->wyksztalcenie;
+          }
+      }
+
 
 echo '// ------------------------------------------';
 echo '<br/><br/>';
 
-$obiekt = new Wyksztalcenie('srednie');
-$obiekt->setNazwa('wyższe');
-echo $obiekt->getNazwa;
+      echo Osoba::class; // wskazanie przestrzeni nazw
 
 echo '<br/><br/>';
 echo '// ------------------------------------------';
 echo '<br/><br/>';
 
-$zmienna = new Klasa("klasa");
-$zmienna2 = $zmienna;
-echo $zmienna2 === $zmienna ? "ten sam obiekt" : "rozne obiekty";
-echo '<br/>';
-$zmienna2 = clone $zmienna;
-echo $zmienna2 === $zmienna ? "ten sam obiekt" : "rozne obiekty";
+      $osoba = new Osoba('Ania', 'wyższe');
+      $osoba2 = clone $osoba;
+      // wyswietli "Ania - wyższe"
+      echo $osoba->getImie()." - ".$osoba->getWyksztalcenie()."<br>";
+      // wyswieli "Ania - wyższe"
+      echo $osoba2->getImie()." - ".$osoba2->getWyksztalcenie()."<br><br>";
+
+
+      $osoba->setImie('Tomek');
+      $osoba->setWyksztalcenie('wyższe podyplomowe');
+      /*
+      * Jeśli nie zdefiniujemy metody __clone, wówczas obiekt
+      * klasy wykształcenie w $osoba2 zostanie nadpisany
+      */
+      // wyswietli "Tomek - wyższe podyplomowe"
+      echo $osoba->getImie()." - ".$osoba->getWyksztalcenie()."<br>";
+      // wyswieli "Ania - wyższe podyplomowe"
+      echo $osoba2->getImie()." - ".$osoba2->getWyksztalcenie();
+
+echo '<br/><br/>';
+echo '// ------------------------------------------';
+echo '<br/><br/>';
+
+      //po zdefiniowaniu metody __clone
+      // wyswietli "Tomek - wyższe podyplomowe"
+      echo $osoba->getImie()." - ".$osoba->getWyksztalcenie()."<br>";
+      // wyswieli "Ania - wyższe"
+      echo $osoba2->getImie()." - ".$osoba2->getWyksztalcenie()."<br>";
+
+echo '<br/><br/>';
+echo '// ------------------------------------------';
+echo '<br/><br/>';
+
+      $osoba = new Osoba('Ania', 'wyższe');
+      $osoba2 = $osoba;
+      // wyswietli "Ania - wyższe"
+      echo $osoba->getImie()." - ".$osoba->getWyksztalcenie()."<br>";
+      // wyswieli "Ania - wyższe"
+      echo $osoba2->getImie()." - ".$osoba2->getWyksztalcenie()."<br><br>";
+
+      $osoba->setImie('Tomek');
+      $osoba->setWyksztalcenie('średnie');
+      // wyswietli "Tomek - średnie"
+      echo $osoba->getImie()." - ".$osoba->getWyksztalcenie()."<br>";
+      // wyswieli "Tomek - średnie"
+      echo $osoba2->getImie()." - ".$osoba2->getWyksztalcenie();
+
+echo '<br/><br/>';
+echo '// ------------------------------------------';
+echo '<br/><br/>';
+
+      $obiekt = new Wyksztalcenie('średnie');
+      $obiekt->setNazwa ('wyższe');
+      echo $obiekt->getNazwa();
+
+echo '<br/><br/>';
+echo '// ------------------------------------------';
+echo '<br/><br/>';
+
+      $zmienna = new Klasa("klasa");
+      $zmienna2 = $zmienna;
+      echo $zmienna2 === $zmienna ? "ten sam obiekt" : "rozne obiekty";
+      echo '<br/>';
+      $zmienna2 = clone $zmienna;
+      echo $zmienna2 === $zmienna ? "ten sam obiekt" : "rozne obiekty";
 
 echo '<br/><br/>';
 echo '// ------------------------------------------';
@@ -195,49 +278,5 @@ echo '<br/><br/>';
 echo '<br/><br/>';
 echo '// ------------------------------------------';
 echo '<br/><br/>';
-
-  /*    class Osoba {
-
-          private $imie;
-          private $wyksztalcenie;
-
-          function __construct($imie, $wyksztalcenie) {
-              $this->imie = $imie;
-                $this->wyksztalcenie = new Wyksztalcenie($wyksztalcenie);
-          }
-          public function setImie($imie) {
-              $this->imie = $imie;
-          }
-          public function getImie() {
-              return $this->imie;
-
-          }
-          public function setWyksztalcenie($wyksztalcenie) {
-              $this->wyksztalcenie->setNazwa($wyksztalcenie);
-          }
-          public function getWyksztalcenie() {
-              return $this->wyksztalcenie->getNazwa();
-          }
-      }
-
-      $osoba = new Osoba('Ania', 'wyższe');
-      $osoba2 = $osoba;
-
-      // wyswietli "Ania - wyższe"
-      echo $osoba->getImie()." - ".$osoba->getWyksztalcenie()."<br>";
-
-      // wyswieli "Ania - wyższe"
-      echo $osoba2->getImie()." - ".$osoba2->getWyksztalcenie()."<br>";
-      $osoba->setImie('Tomek');
-      $osoba->setWyksztalcenie('średnie');
-
-      // wyswietli "Tomek - średnie"
-      echo $osoba->getImie()." - ".$osoba->getWyksztalcenie()."<br>";
-
-      // wyswieli "Tomek - średnie"
-      echo $osoba2->getImie()." - ".$osoba2->getWyksztalcenie()."<br>";
-
-*/
-
 
 ?>

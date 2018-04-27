@@ -3,7 +3,16 @@
   class database {
       static $host, $user, $password, $database;
 
-      function __construct($host='torus.uck.pk.edu.pl', $user='aglina', $password='niemahasla', $database='aglina') {
+      /*
+          function __construct($host='torus.uck.pk.edu.pl', $user='aglina', $password='niemahasla', $database='aglina') {
+          self::$host=$host;
+          self::$user=$user;
+          self::$password=$password;
+          self::$database=$database;
+      }
+      */
+
+      function __construct($host='localhost', $user='root', $password='', $database='Serwis') {
           self::$host=$host;
           self::$user=$user;
           self::$password=$password;
@@ -14,8 +23,7 @@
           $connection = mysqli_connect(self::$host, self::$user, self::$password, self::$database);
           if($connection) {
               return $connection;
-          }
-          else {
+          } else {
               return die('Connection error!');
           }
       }

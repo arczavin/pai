@@ -6,7 +6,7 @@ function getUsers(){
     $query= $database->query("SELECT * FROM user");
 
     while($user = mysqli_fetch_array($query)){
-        
+
         echo '<tr><td>'.$user['uder_id'].'</td><td>'.$user['email'].'</td><td>'.$user['password'].'</td><tr>';
     }
 }
@@ -24,7 +24,7 @@ function insertUser(){
 
     if($temo_haslo===$temp_haslo2){
 
-        if($database->query("INSERT INTO `user` (`email`, `password`) 
+        if($database->query("INSERT INTO `user` (`email`, `password`)
         VALUES ('$temp_email', md5('$temo_haslo'), '$temp_imie', '$temp_nazwisko');
         ")){
             header("location: ../View/index.php?msg=OK");
@@ -33,11 +33,12 @@ function insertUser(){
             die();
         }
 
-    }else{
+    } else {
         echo "Incorrect password!";
         die();
     }
 
     echo $temp_email;
+    $database->close();
 }
 ?>
