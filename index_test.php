@@ -10,9 +10,9 @@ $obj3 = new Osoba('Jennifer', 'srednie');
 $student = new Student("10", "Andrzej", "średnie");
 
 $serializedStudent = serialize($student);
-file_put_contents('student', $serializedStudent);
+file_put_contents('student_serializacja', $serializedStudent);
 
-$deserializedStudent = file_get_contents('student');
+$deserializedStudent = file_get_contents('student_serializacja');
 $student = unserialize($deserializedStudent);
 
 echo "<br><br>";
