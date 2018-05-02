@@ -8,11 +8,25 @@ $obj3 = new Osoba('Jennifer', 'srednie');
 
 
 $student = new Student("10", "Andrzej", "średnie");
+
+$serializedStudent = serialize($student);
+file_put_contents('student', $serializedStudent);
+
+$deserializedStudent = file_get_contents('student');
+$student = unserialize($deserializedStudent);
+
+echo "<br><br>";
+echo $student->getImie();
+
+echo "<br><br>";
+echo $student;
+
+echo "<br><br>";
 $student -> setNumerAlbumu("1337");
 echo $student -> getNumerAlbumu();
 echo "<br><br>";
 
-if ($obj) { $nowyobiekt = $obj; 
+if ($obj) { $nowyobiekt = $obj;
 } else {
   $nowyobiekt = new Object();
 }

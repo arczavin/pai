@@ -42,6 +42,6 @@ class Osoba {
       function __clone() {
           $this->wyksztalcenie = clone $this->wyksztalcenie;
       }
-  }
+}
 
-  ?>
+?>
