@@ -1,0 +1,47 @@
+
+input {
+    display: block;
+    margin: 25px;
+}
+info {
+    margin: 15px 0;
+}
+footer {
+    text-align: center;
+    color: white;
+}
+form {
+  display: inline-block;
+}
+body {
+    background-image: url("../images/background_1.jpg");
+    background-attachment: fixed;
+}
+h3 {
+    color: white;
+    border-style: double solid;
+    border-width: 4px;
+    border-radius: 20px;
+}
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+.center {
+    text-align: center;
+    color: red;
+}
+.large {
+  font-size: 300%;
+}
+.container {
+  text-align: center;
+}
+.container input {
+  text-align: center;
+  margin: 3px;
+}
+#para1 {
+    text-align: center;
+    color: blue;
+}

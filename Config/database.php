@@ -12,7 +12,7 @@
       }
       */
 
-      function __construct($host='localhost', $user='root', $password='', $database='Serwis') {
+      function __construct($host='localhost', $user='root', $password='', $database='laborki') {
           self::$host=$host;
           self::$user=$user;
           self::$password=$password;
