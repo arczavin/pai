@@ -1,12 +1,9 @@
-
 <head>
     <link type="text/css" rel="stylesheet" href="../Resources/css/style_test.css">
 </head>
 
-<div class="container">
-    <footer>
+<div class="footer">
 
-        Copywright 2018
+          Copywright 2018 - arczvain
 
-    </footer>
 </div>

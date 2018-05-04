@@ -13,11 +13,11 @@ function getUsers(){
 
 function insertUser(){
 
-    $temp_imie = $_POST["imie"];
-    $temp_nazwisko = $_POST["nazwisko"];
+    $temp_imie = $_POST["name"];
+    $temp_nazwisko = $_POST["surname"];
     $temp_email = $_POST["email"];
-    $temo_haslo = $_POST["haslo"];
-    $temp_haslo2 = $_POST["haslo2"];
+    $temo_haslo = $_POST["password"];
+    $temp_haslo2 = $_POST["password2"];
 
     $database = new Database();
     $database->connect();
@@ -25,7 +25,7 @@ function insertUser(){
     if($temo_haslo===$temp_haslo2){
 
         if($database->query("INSERT INTO `user` (`email`, `password`)
-        VALUES ('$temp_email', md5('$temo_haslo'), '$temp_imie', '$temp_nazwisko');
+        VALUES ('$temp_email', md5('$temo_haslo'), '$temp_name', '$temp_surname');
         ")){
             header("location: ../View/index.php?msg=OK");
         }else{
