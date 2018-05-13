@@ -1,0 +1,337 @@
+html,body {
+  background: url("../images/background_2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+  height: 100%;
+}
+
+.wrapper {
+  display: grid;
+  /* mozemy uzywac px lub %, ale zaleca się używanie
+  fraction (fr) z uwagi na uniknięcie problemów
+  z cechami margin i padding */
+  grid-template-columns: 1fr
+  grid-template-columns: repeat(1, 1fr);
+  /* grid-column-gap:
+  1em; grid-row-gap: 1em; */
+  grid-gap: 1em;
+  /* grid-auto-rows: 100px; */
+  grid-auto-rows: minmax(100px, auto);
+  /* align-items: start;
+  justify-items: start; */
+}
+.wrapper > div {
+  background: blue;
+  padding: 1em;
+}
+.nested {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(5, 1fr);
+}
+.nested > div {
+  border: black 1px solid;
+  padding: 2em;
+}
+.box1 {
+  grid-column: lo1;
+
+}
+.box3 {
+  grid-column: 5/1;
+
+}
+
+/*-----------------------------------footer*/
+.footer {
+  position: fixed;
+  margin-bottom: 1%;
+  color: rgba(255,255,255,0.5);
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  border-radius: 10px;
+  bottom: 0;
+  width: 35%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+/*-----------------------------------container*/
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/*-----------------------------------button1*/
+.button1 {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #018dc4;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font: normal medium/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #0199d9;
+  text-align:center
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.button1:hover {
+  border: 1px solid #007cad;
+  background: rgba(0,142,198,1);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.3) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.3) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.button1:active {
+  border: 1px solid #018dc4;
+  background: #00a6e8;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2) inset;
+  text-shadow: none;
+  -webkit-transition: all 50ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 50ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 50ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 50ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/*-----------------------------------button2*/
+.button2 {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 15px 35px;
+  border: 1px solid #0f9b0f;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: normal medium/normal 10px/30px "Questrial", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(-90deg, rgb(90,190,87) 0, rgb(53,146,56) 100%), rgb(90, 190, 87);
+  background: -moz-linear-gradient(180deg, rgb(90,190,87) 0, rgb(53,146,56) 100%), rgb(90, 190, 87);
+  background: linear-gradient(180deg, rgb(90,190,87) 0, rgb(53,146,56) 100%), rgb(90, 190, 87);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 0 2px 1px 0 rgba(0,0,0,0.3) ;
+  box-shadow: 0 2px 1px 0 rgba(0,0,0,0.3) ;
+  text-shadow: 0 1px 2px rgb(50,114,40) ;
+}
+.button2:hover {
+  background: rgb(90, 190, 87);
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.11) ;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.11) ;
+  -webkit-transition: all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 150ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.button2:active {
+  border: 1px solid rgba(180,180,180,0.2);
+  background: rgba(77,168,74,1);
+  -webkit-box-shadow: 0 3px 0 0 rgba(0,0,0,0.1) inset;
+  box-shadow: 0 3px 0 0 rgba(0,0,0,0.1) inset;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+/*-----------------------------------button3*/
+.button3 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 2px solid rgb(30,205,151);
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  font: normal normal bold 25px/15px "Advent Pro", Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  text-transform: uppercase;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: 1px;
+  background: rgba(0,0,0,0);
+  -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+}
+.button3:hover {
+  color: rgba(255,255,255,1);
+  background: rgb(30, 205, 151);
+}
+.button3:active {
+  border: 2px solid rgba(33,224,163,1);
+  background: rgba(33,224,163,1);
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+}
+
+/*-----------------------------------button4*/
+.button4 {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 64px;
+  position: relative;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  padding: 5px 13px;
+  border: 0 none rgb(177,106,2);
+  border-bottom: 4px solid rgb(177,106,2);
+  -webkit-border-radius: 7px 7px 9px 9px;
+  border-radius: 7px 7px 11px 11px;
+  font: normal normal bold 24px/40px "Averia Sans Libre", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  white-space: nowrap;
+  background: -webkit-linear-gradient(-90deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+  background: -moz-linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+  background: linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 0 -1px 1px 0 rgba(255,255,255,0.701961) inset, 0 1px 1px 0 rgb(177,106,2) ;
+  box-shadow: 0 -1px 1px 0 rgba(255,255,255,0.701961) inset, 0 1px 1px 0 rgb(177,106,2) ;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.498039) ;
+}
+.button4:hover {
+  background: rgb(225, 157, 60);
+  -webkit-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.button4:active {
+  height: 60px;
+  margin: 4px 0 0;
+  border: none;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  background: -webkit-linear-gradient(-90deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+  background: -moz-linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+  background: linear-gradient(180deg, rgb(253,218,134) 0, rgb(225,157,60) 100%), rgb(253, 218, 134);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-transition: all 30ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 30ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 30ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 30ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/*-----------------------------------button5*/
+.button5 {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  top: 0;
+  padding: 0 25.600000381469727px;
+  border: 1px solid rgba(152,0,0,1);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: normal normal 300 22px/30px "Iceland", Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  text-transform: uppercase;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-linear-gradient(0deg, rgba(255,0,0,0.8) 0, rgba(255,0,0,0.8) 100%), rgba(0,0,0,1);
+  background: -moz-linear-gradient(90deg, rgba(255,0,0,0.8) 0, rgba(255,0,0,0.8) 100%), rgba(0,0,0,1);
+  background: linear-gradient(90deg, rgba(255,0,0,0.8) 0, rgba(255,0,0,0.8) 100%), rgba(0,0,0,1);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset, 0 7px 0 0 rgba(137,30,30,1) , 0 8px 3px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset, 0 7px 0 0 rgba(137,30,30,1) , 0 8px 3px 0 rgba(0,0,0,0.2) ;
+  -webkit-transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -moz-transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -o-transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: all 0.1s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}
+.button5:hover {
+  border: 1px solid rgba(114,2,2,1);
+  background: -webkit-linear-gradient(0deg, rgba(152,0,0,1) 0, rgba(152,0,0,1) 100%), rgba(0,0,0,1);
+  background: -moz-linear-gradient(90deg, rgba(152,0,0,1) 0, rgba(152,0,0,1) 100%), rgba(0,0,0,1);
+  background: linear-gradient(90deg, rgba(152,0,0,1) 0, rgba(152,0,0,1) 100%), rgba(0,0,0,1);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset, 0 7px 0 0 rgba(89,8,8,1) , 0 8px 3px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset, 0 7px 0 0 rgba(89,8,8,1) , 0 8px 3px 0 rgba(0,0,0,0.2) ;
+}
+.button5:active {
+  top: 6px;
+  border: 1px solid rgba(152,0,0,1);
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: -webkit-linear-gradient(-90deg, rgba(152,0,0,0.8) 0, rgba(152,0,0,0.8) 100%), rgb(255, 255, 255);
+  background: -moz-linear-gradient(180deg, rgba(152,0,0,0.8) 0, rgba(152,0,0,0.8) 100%), rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(152,0,0,0.8) 0, rgba(152,0,0,0.8) 100%), rgb(255, 255, 255);
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+  -webkit-box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.298039) inset, 0 -1px 1px 0 rgba(255,255,255,0.14902) inset;
+  -webkit-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -moz-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -o-transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: all 50ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}

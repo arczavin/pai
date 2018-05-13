@@ -3,7 +3,5 @@
 </head>
 
 <div class="footer">
-
-          Copywright 2018 - arczvain
-
+    Copyright 2018 - <a href="https://github.com/arczavin">https://github.com/arczavin</href>
 </div>

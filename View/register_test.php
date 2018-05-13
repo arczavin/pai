@@ -5,7 +5,10 @@
 <body>
 
   <div class="container">
+
     <div class="fonts">REGISTRATION</div>
+
+
 
     <form action="../Controller/controller.php?method=insertUser" method=post>
       <input type="text" placeholder="name" name="name" class="data" required autofocus /><br>
